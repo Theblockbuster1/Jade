@@ -206,7 +206,7 @@ public class WailaConfig implements IWailaConfig {
 						.fieldOf("perspectiveMode")
 						.orElse(PerspectiveMode.CAMERA)
 						.forGetter(General::getPerspectiveMode),
-				Codec.floatRange(0, 20).fieldOf("extendedReach").orElse(0F).forGetter(General::getExtendedReach),
+				Codec.floatRange(0, 192).fieldOf("extendedReach").orElse(0F).forGetter(General::getExtendedReach),
 				Codec.BOOL.fieldOf("debug").orElse(false).forGetter(General::isDebug),
 				Codec.BOOL.fieldOf("itemModNameTooltip").orElse(true).forGetter(General::showItemModNameTooltip),
 				StringRepresentable.fromEnum(BossBarOverlapMode::values)
@@ -359,7 +359,7 @@ public class WailaConfig implements IWailaConfig {
 
 		@Override
 		public void setExtendedReach(float extendedReach) {
-			this.extendedReach = Mth.clamp(extendedReach, 0, 20);
+			this.extendedReach = Mth.clamp(extendedReach, 0, 192);
 		}
 
 		@Override
